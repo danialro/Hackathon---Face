@@ -2,37 +2,44 @@ body {
 
   font-family: 'Raleway';
   padding-top: 50px;
-/*  background-color: #2E8B57;
-*/}
+}
 
 
 .business-header {
-    height: 400px;
-    background: url('https://static.pexels.com/photos/29585/pexels-photo-29585.jpg') center center no-repeat scroll;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    background-size: cover;
-    -o-background-size: cover;
+  height: 400px;
+  background: url('https://static.pexels.com/photos/29585/pexels-photo-29585.jpg') center center no-repeat scroll;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
 }
 
 /* Customize the text color and shadow color and to optimize text legibility. */
 
 .tagline {
-    text-shadow: 0 0 10px #000;
-    color: #fff;
+  text-shadow: 0 0 10px #000;
+  color: #fff;
+}
+
+.moto {
+  text-shadow: 0 0 10px #000;
+  color: #fff;
+  font-size: 60px;
+  font-family: 'Yellowtail';
+  margin-top: 200px;
 }
 
 .img-center {
-    margin: 0 auto;
+  margin: 0 auto;
 }
 
 footer {
-    margin: 50px 0;
+  margin: 50px 0;
 }
 
 .fa-plus:before {
-    content: "\f067";
-    font-size: -webkit-xxx-large;
+  content: "\f067";
+  font-size: -webkit-xxx-large;
 }
 
 .fa-minus:before {
@@ -42,8 +49,8 @@ footer {
 
 .equal {
   display: block;
-  margin-bottom: -15px;
-  margin-top: -15px;
+  margin-bottom: -30px;
+  margin-top: -7.5px;
 }
 
 .img-text {
@@ -63,7 +70,20 @@ h3 {
   margin-top: 120px;
 }
 
+.client-input {
+  display: none;
+}
 
+
+h5 {
+  margin-top: 30px;
+  margin-right: 40px;
+}
+
+
+#examples {
+  margin-bottom: 20px;
+}
 
 
 
