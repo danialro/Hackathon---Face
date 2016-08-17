@@ -1,12 +1,15 @@
-app.service('MainServices', ['$http', function ($http) {
+app.service('imageServices', ['$http', function ($http) {
 
-  // var beerService = {
+  var imageServices = {
 
-  //   beers: [],
+    maleImages: [],
 
-  // };
+  };
 
+  var addMaleImage = function(newMaleImage) {
 
+    imageServices.maleImages.push(newMaleImage);
+  };
   // beerService.getAll = function () {
 
   //   return $http.get('/beers').success(function (data) {
@@ -39,11 +42,11 @@ app.service('MainServices', ['$http', function ($http) {
 
   // };
 
-  // return {
+  return {
 
-  //   allBeers: beerService,
-  //   addBeer: beerService,
-  //   removeBeer: beerService
-  // };
+    imageServices: imageServices,
+    addMaleImage: addMaleImage
+
+  };
 
 }]);
