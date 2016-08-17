@@ -323,39 +323,37 @@
 <!-- jquery functions -->
 <script type="text/javascript">
 
-  $('.img-center').on('click', function () {
+$('.img-center').on('click', function () {
 
     $(".child-input").toggle("fast"); 
   });
 
-
-  $('.child-add').on('click', function () {
+$('.child-add').on('click', function () {
 
     $(".client-input").toggle("fast"); 
   });
 
+$(document).ready(function (){
 
-  $(document).ready(function (){
-
-    $(".img-client").click(function() {
+  $(".img-client").click(function() {
       $('html, body').animate({
         scrollTop: $(".img-text").offset().top
       }, 500);
     });
 
-    $(".examples").click(function (){
+  $(".examples").click(function (){
         $('html, body').animate({
           scrollTop: $("#examples").offset().top
         }, 1000);
     });
 
-    $(".about").click(function (){
+  $(".about").click(function (){
         $('html, body').animate({
           scrollTop: $("#about").offset().top
         }, 1000);
     });
 
-    $(".navbar-brand").click(function (){
+  $(".navbar-brand").click(function (){
       $('html, body').animate({
         scrollTop: $("#page-top").offset().top
       }, 1000);
