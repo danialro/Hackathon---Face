@@ -9,15 +9,31 @@ var dadConfidence = 0;
 
   var verifyService = {
 
-    childDetails: [],
-    momDetails:[],
-    dadDetails:[],
+    // childDetails: [],
+    // momDetails:[],
+    // dadDetails:[],
+    compareResults: []
 
   };
 
+//compare between mom result to dad
+verifyService.compare =  function() {
+  console.log(momConfidence);
+  console.log(dadConfidence);
+    if (momConfidence > dadConfidence) {
+
+      var momWins = "Mom";
+      verifyService.compareResults.push(momWins);
+
+    } else {
+
+      var dadWins = "Dad";
+      verifyService.compareResults.push(dadWins);
+    }
+}
 
 // child function
-verifyService.addChildImage= function (newChildDetails){
+verifyService.addChildImage = function (newChildDetails){
 
 //insert child to gallery
 
@@ -94,25 +110,16 @@ verifyService.addFemaleImage = function(newMomImage) {
 
       var bodyDad = newDadImage;
 
-      request.send(JSON.stringify(bodyDad));  
-
+      request.send(JSON.stringify(bodyDad));
+      // compare();
   }
 
-//compare between mom result to dad
-verifyService.compare =  function() {
 
-  console.log("mom's confi", momConfidence,"dad's confi", dadConfidence);
 
-    if (momConfidence > dadConfidence) {
+  verifyService.getWinner = function() {
 
-      alert("Mommy wins!Are you sure this/you are the dad? For paternity test dial 1800-daniel-arik");
-
-    } else {
-
-      alert("Daddy wins! Are you sure they put the right baby bracelets in the hospital? For a lawyer call 1800-arik-daniel")
-    }
-}
-
+    return verifyService.compareResults;
+  }
  
   return verifyService; 
 

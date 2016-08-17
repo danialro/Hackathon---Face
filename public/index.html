@@ -16,6 +16,10 @@
 
   <script src="jquery/dist/jquery.min.js"> </script>
   <link rel="stylesheet" type="text/css" href="style.css">
+
+  <script src="sweetalert/dist/sweetalert.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="sweetalert/dist/sweetalert.css">
+  
 </head>
 
 <body ng-app="FaceIt" ng-controller="MainCtrl" id="page-top">
@@ -323,6 +327,7 @@
 <!-- jquery functions -->
 <script type="text/javascript">
 
+//toggling functions
 $('.img-center').on('click', function () {
 
     $(".child-input").toggle("fast"); 
@@ -335,6 +340,7 @@ $('.child-add').on('click', function () {
 
 $(document).ready(function (){
 
+//animate functions
   $(".img-client").click(function() {
       $('html, body').animate({
         scrollTop: $(".img-text").offset().top
