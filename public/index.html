@@ -109,7 +109,7 @@
       <p class="img-text">Add your child's photo here</p>
 
       <div class="client-input">
-        <form ng-submit="addImage()">
+        <form ng-submit="addChildImage()">
           
           <div class="form-group">
             <input type="text" class="form-control" placeholder="Name" ng-model="childName"></input>
@@ -180,6 +180,9 @@
 </div>
 <!-- /.row -->
 <br>
+<!-- create container to include the uploaded images (child, mom, father) -->
+<div class="container">
+        <div class="row">
 
 <!-- compare invoke function -->
 <div class="row">
@@ -295,6 +298,7 @@
 
 
   <script src="js/app.js"></script>
+  <script src="kairos.js"></script>
   <script src="js/services/images.js"></script>
   <script src="js/controllers/mainController.js"></script>
 
