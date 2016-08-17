@@ -1,5 +1,6 @@
 app.controller("MainCtrl",['$scope', 'imageServices', function($scope, imageServices){
 
+    $scope.seeResults = 
 
 //connect child image from services to view
 
@@ -36,4 +37,8 @@ app.controller("MainCtrl",['$scope', 'imageServices', function($scope, imageServ
 
     imageServices.addMaleImage(newDadImage);
   };
+
+  $scope.seeResults = function (){
+    imageServices.compare(); 
+  }
 }]);

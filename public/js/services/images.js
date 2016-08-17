@@ -2,6 +2,8 @@ app.service('imageServices', ['$http', function ($http) {
 
 var request = new XMLHttpRequest();
 var momConfidence;
+var dadConfidence;
+
 
 
 //verifyService is where we "store" image data
@@ -10,9 +12,19 @@ var momConfidence;
 
     childDetails: [],
     momDetails:[],
-    dadDetails:[]
+    dadDetails:[],
+
   };
 
+verifyService.compare =  function(momConfidence, dadConfidence) {
+
+    if (momConfidence> dadConfidence) {
+      alert("Mommy wins!Are you sure this/you are the dad? For paternity test dial 1800-daniel-arik");
+    } else {
+      alert("Daddy wins! Are you sure they put the right baby bracelets in the hospital? For a lawyer call 1800-arik-daniel")
+    }
+
+}
 
 // child function
 verifyService.addChildImage= function (newChildDetails){
@@ -30,7 +42,7 @@ verifyService.addChildImage= function (newChildDetails){
         console.log('Status:', this.status);
         console.log('Headers:', this.getAllResponseHeaders());
         console.log('Body:', this.responseText);
-        var response = this.responseText;
+
 
       }
     };
@@ -39,6 +51,7 @@ verifyService.addChildImage= function (newChildDetails){
 
     request.send(JSON.stringify(bodyChild));
 
+}
 
 //compare mom
 verifyService.addFemaleImage = function(newMomImage) {
@@ -55,6 +68,8 @@ verifyService.addFemaleImage = function(newMomImage) {
         console.log('Status:', this.status);
         console.log('Headers:', this.getAllResponseHeaders());
         console.log('Body:', this.responseText);
+        var responseObject = JSON.parse(this.response);
+        momConfidence = responseObject.images[0].transaction.confidence;
 
 
       }
@@ -80,6 +95,8 @@ verifyService.addFemaleImage = function(newMomImage) {
           console.log('Status:', this.status);
           console.log('Headers:', this.getAllResponseHeaders());
           console.log('Body:', this.responseText);
+        var responseObject = JSON.parse(this.response);
+        dadConfidence = responseObject.images[0].transaction.confidence
         }
       };
 
@@ -88,11 +105,11 @@ verifyService.addFemaleImage = function(newMomImage) {
       request.send(JSON.stringify(bodyDad));  
 
 
+
+
     }
-
-
-}
-
+//compare between mom result to dad
+ 
   return verifyService; 
 
 }]);
