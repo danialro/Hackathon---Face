@@ -1,4 +1,4 @@
-app.controller("MainCtrl",['$scope', 'MainServices', function($scope, MainServices){
+app.controller("MainCtrl",['$scope', 'imageServices', function($scope, imageServices){
 
   // we get the beers from the array only after the getAll func returns the data from the server
   // serviceCtrl.allBeers.getAll().then(function(){
@@ -6,16 +6,18 @@ app.controller("MainCtrl",['$scope', 'MainServices', function($scope, MainServic
   //   $scope.allBeers = serviceCtrl.allBeers.beers;
   //   console.log('from the controller', $scope.allBeers);
 
-  // });
+  // // });
+  // $scope.imageServices = mainServices.imageServices.maleImages;
 
-  // $scope.addImage = function() {
+  // $scope.addMaleImage = function() {
 
-  //   var newFemaleImage = {
+  //   var newMaleImage = {
   //     maleName: $scope.maleName,
   //     maleImage: $scope.maleImage,
-      
   //   };
-  // }
+
+  //   mainServices.addMaleImage(newMaleImage);
+  // };
 
   //   serviceCtrl.addBeer.create(newBeer)
     

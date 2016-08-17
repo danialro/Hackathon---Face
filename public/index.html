@@ -96,15 +96,20 @@
     <!-- /.row -->
 <hr>
 
+<!-- compare function -->
 <div class="row">
 
+<!-- child insert photo function -->
   <div class="col-lg-3 col-half-offset">
       <img class="img-circle img-responsive img-center" src="https://edc2.healthtap.com/ht-staging/user_answer/avatars/1907024/large/open-uri20140724-8950-197wdqe.jpeg?1406165186" alt="">
       <h3><i class="fa fa-child pic-icon" aria-hidden="true"></i></h3>
       <p class="img-text">Add your child's photo here</p>
 
       <div class="client-input">
-        <form ng-submit="addImage()">
+
+        <img class="img-circle img-responsive img-center" src="http://placehold.it/300x300" ng-src="{{childImage}}" alt="">
+        
+        <form ng-submit="addChildImage()">
           
           <div class="form-group">
             <input type="text" class="form-control" placeholder="Name" ng-model="childName"></input>
@@ -125,6 +130,7 @@
       <i class="fa fa-minus equal" aria-hidden="true"></i>
   </div>
 
+<!-- female insert photo function -->
   <div class="col-lg-3">
 
       <img class="img-circle img-responsive img-center" src="http://ladeessa.com/wp-content/uploads/2015/08/bigstock-Beautiful-face-of-young-woman-616721091.png" alt="">
@@ -132,8 +138,11 @@
       <p class="img-text">Add your female photo here</p>
 
       <div class="client-input">
-        <form ng-submit="addImage()">
-          
+
+        <img class="img-circle img-responsive img-center" src="http://placehold.it/300x300" ng-src="{{femaleImage}}" alt="">
+
+        <form ng-submit="addFemaleImage()">
+
           <div class="form-group">
             <input type="text" class="form-control" placeholder="Name" ng-model="femaleName"></input>
           </div>
@@ -151,14 +160,18 @@
       <i class="fa fa-plus plus" aria-hidden="true"></i>
   </div>
 
+<!-- male insert photo function -->
   <div class="col-lg-3">
       <img class="img-circle img-responsive img-center" src="http://i2.mirror.co.uk/incoming/article5423743.ece/ALTERNATES/s615b/MOST-BEAUTIFUL-FACES.jpg" alt="">
       <h3><i class="fa fa-mars pic-icon" aria-hidden="true"></i></h3>
       <p class="img-text">Add your male photo here</p>
 
       <div class="client-input">
-        <form ng-submit="addImage()">
-          
+
+        <img class="img-circle img-responsive img-center" src="http://placehold.it/300x300" ng-src="{{maleImage}}" alt="">
+
+        <form ng-submit="addMaleImage()">
+
           <div class="form-group">
             <input type="text" class="form-control" placeholder="Name" ng-model="maleName"></input>
           </div>
@@ -174,9 +187,10 @@
 
 </div>
 <!-- /.row -->
+<!-- end of compare function -->
 <br>
 
-<!-- compare invoke function -->
+<!-- invoke compare function and see results -->
 <div class="row">
   <div class="col-sm-12 text-center">
       <p>
@@ -185,10 +199,12 @@
   </div>
 </div>
 
+<!-- examples container of comapre results -->
+<div class="container" id="examples">
+
 <hr>
 
-<!-- example results -->
-<div class="row" id="examples">
+<div class="row">
   <div class="col-sm-12">
     <h2>Examples</h2>
   </div>
@@ -196,7 +212,7 @@
 
 <div class="row">
   <div class="col-lg-3 col-half-offset">
-      <img class="img-circle img-responsive img-center" src="https://edc2.healthtap.com/ht-staging/user_answer/avatars/1907024/large/open-uri20140724-8950-197wdqe.jpeg?1406165186" alt="">
+      <img class="img-circle img-responsive img-center" src="/kid.jpg" alt="">
   </div>
   
   <div class="col-lg-1 text-center">
@@ -205,7 +221,7 @@
   </div>
 
   <div class="col-lg-3">
-      <img class="img-circle img-responsive img-center" src="http://ladeessa.com/wp-content/uploads/2015/08/bigstock-Beautiful-face-of-young-woman-616721091.png" alt="">
+      <img class="img-circle img-responsive img-center" src="/ethiopia.jpg" alt="">
   </div>
 
   <div class="col-lg-1 text-center">
@@ -213,7 +229,7 @@
   </div>
 
   <div class="col-lg-3">
-      <img class="img-circle img-responsive img-center" src="http://i2.mirror.co.uk/incoming/article5423743.ece/ALTERNATES/s615b/MOST-BEAUTIFUL-FACES.jpg" alt="">
+      <img class="img-circle img-responsive img-center" src="/Black_mans_face.jpg" alt="">
   </div>
 
 </div>
@@ -223,12 +239,51 @@
 <div class="row">
   <div class="col-sm-12 text-center">
       <p>
-        <a class="btn btn-default btn-lg" href="#">Compare Results: Child looks more like mom (76%)</a>
+        <a class="btn btn-success btn-lg" href="#">Compare Results: Child looks more like dad</a>
       </p>
   </div>
 </div>
 
+<br>
+<br>
+<br>
+
+<div class="row">
+  <div class="col-lg-3 col-half-offset">
+      <img class="img-circle img-responsive img-center" src="/canstock13182922.jpg" alt="">
+  </div>
+  
+  <div class="col-lg-1 text-center">
+      <i class="fa fa-minus equal" aria-hidden="true"></i>
+      <i class="fa fa-minus equal" aria-hidden="true"></i>
+  </div>
+
+  <div class="col-lg-3">
+      <img class="img-circle img-responsive img-center" src="http://www.soyimakeup.com/wp-content/uploads/2015/07/Screen-Shot-2015-07-06-at-12.29.36-PM.png" alt="">
+  </div>
+
+  <div class="col-lg-1 text-center">
+      <i class="fa fa-plus plus" aria-hidden="true"></i>
+  </div>
+
+  <div class="col-lg-3">
+      <img class="img-circle img-responsive img-center" src="http://s3-ak.buzzfed.com/static/2013-11/enhanced/webdr02/20/16/grid-cell-3121-1384982033-2.jpg" alt="">
+  </div>
+
+</div>
+
+<br>
+
+<div class="row">
+  <div class="col-sm-12 text-center">
+      <p>
+        <a class="btn btn-success btn-lg" href="#">Compare Results: Child looks more like mom</a>
+      </p>
+  </div>
+</div>
+</div>
 <hr>
+<!-- end of examples container -->
 
   <!-- Footer -->
   <footer>
@@ -254,6 +309,7 @@
 </div>
 <!-- /.container -->
 
+<!-- jquery functions -->
 <script type="text/javascript">
 
   $('.img-center').on('click', function () {
@@ -284,9 +340,6 @@
   });
 
 </script>
-
-
-
 
 
   <script src="js/app.js"></script>
