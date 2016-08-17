@@ -6,6 +6,7 @@
 
   <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
   <link href="https://fonts.googleapis.com/css?family=Gochi+Hand|Yellowtail" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
   <script src="angular/angular.min.js"></script>
   <script src="angular-ui-router/release/angular-ui-router.min.js"></script>
@@ -30,22 +31,16 @@
                   <span class="icon-bar"></span>
                   <span class="icon-bar"></span>
               </button>
-              <a class="navbar-brand" href="#page-top" id="faceIt">faceIt</a>
+              <a class="navbar-brand" href="#" id="logo"><i class="material-icons md-18">face</i></a>
           </div>
           <!-- Collect the nav links, forms, and other content for toggling -->
           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
               <ul class="nav navbar-nav">
-<!--                   <li>
-                      <a href="#page-top"></a>
-                  </li> -->
                   <li class="about">
-                      <a href="#about">About</a>
-                  </li>
-                  <li class="about">
-                      <a href="#compare">Compare</a>
+                      <a href="#">Compare</a>
                   </li>
                   <li class="examples">
-                      <a href="#examples">Examples</a>
+                      <a href="#">Examples</a>
                   </li>
               </ul>
           </div>
@@ -72,11 +67,11 @@
 
 
   <!-- Page Content -->
-  <div class="container">
+  <div class="container" id="about">
 
     <hr>
 
-    <div class="row" id="about">
+    <div class="row">
 
         <div class="col-lg-6">
             <h2>What We Do</h2>
@@ -272,19 +267,19 @@
     $(".examples").click(function (){
         $('html, body').animate({
           scrollTop: $("#examples").offset().top
-        }, 2000);
+        }, 1000);
     });
 
     $(".about").click(function (){
         $('html, body').animate({
           scrollTop: $("#about").offset().top
-        }, 2000);
+        }, 1000);
     });
 
-  $("#faceIt").click(function (){
+  $(".navbar-brand").click(function (){
       $('html, body').animate({
-        scrollTop: $("#faceIt").offset().top
-      }, 2000);
+        scrollTop: $("#page-top").offset().top
+      }, 1000);
     });
   });
 
