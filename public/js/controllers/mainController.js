@@ -17,6 +17,7 @@ app.controller("MainCtrl",['$scope', 'imageServices', function($scope, imageServ
   $scope.addFemaleImage = function() {
 
     var newMomImage = {
+
       image: $scope.femaleImage,
       subject_id: $scope.childName,
       gallery_name: $scope.childName + 1
@@ -29,20 +30,24 @@ app.controller("MainCtrl",['$scope', 'imageServices', function($scope, imageServ
   $scope.addMaleImage = function() {
 
     var newDadImage = {
+
       image: $scope.maleImage,
       subject_id: $scope.childName,
       gallery_name: $scope.childName + 1
     }
 
     imageServices.addMaleImage(newDadImage);
+    
   };
 
-//compare seeResults function
-  $scope.seeResults = function (){
+//compare and show results function
+  $scope.seeResults = function() {
 
     imageServices.compare();
-  };
 
+    var winner = imageServices.getWinner();
+      swal('Congratulations!', winner + " " + 'is the winner!');
+    }
 
 }]);
 
