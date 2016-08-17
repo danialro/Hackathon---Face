@@ -99,19 +99,24 @@
 <!-- compare function -->
 <div class="row">
 
+<div class="col-lg-12">
+  <h3>Click a photo to start uploading pictures !</h3>
+</div>
+
+<br>
+<br>
+<br>
+<br>
 <!-- child insert photo function -->
-  <div class="col-lg-3 col-half-offset">
-      <img class="img-circle img-responsive img-center" src="https://edc2.healthtap.com/ht-staging/user_answer/avatars/1907024/large/open-uri20140724-8950-197wdqe.jpeg?1406165186" alt="">
+  <div class="col-lg-3 col-half-offset here">
+      <img class="img-circle img-responsive img-center img-client" src="https://edc2.healthtap.com/ht-staging/user_answer/avatars/1907024/large/open-uri20140724-8950-197wdqe.jpeg?1406165186" alt="">
       <h3><i class="fa fa-child pic-icon" aria-hidden="true"></i></h3>
       <p class="img-text">Add your child's photo here</p>
 
-      <div class="client-input">
-
-
+      <div class="child-input" style="margin-top:30px">
 
         <img class="img-circle img-responsive img-center" src="http://placehold.it/300x300" ng-src="{{childImage}}" alt="">
         
-
         <form ng-submit="addChildImage()">
           
           <div class="form-group">
@@ -122,7 +127,7 @@
             <input type="text" class="form-control" placeholder="Image URL" ng-model="childImage"></input>
           </div>
 
-          <button type="submit" class="btn btn-default">Add</button>
+          <button type="submit" class="btn btn-success child-add">Add</button>
         </form>
       </div>
 
@@ -136,11 +141,11 @@
 <!-- female insert photo function -->
   <div class="col-lg-3">
 
-      <img class="img-circle img-responsive img-center" src="http://ladeessa.com/wp-content/uploads/2015/08/bigstock-Beautiful-face-of-young-woman-616721091.png" alt="">
+      <img class="img-circle img-responsive img-center img-client" src="http://ladeessa.com/wp-content/uploads/2015/08/bigstock-Beautiful-face-of-young-woman-616721091.png" alt="">
       <h3><i class="fa fa-venus pic-icon" aria-hidden="true"></i></h3>
       <p class="img-text">Add your female photo here</p>
 
-      <div class="client-input">
+      <div class="client-input" style="margin-top:30px">
 
         <img class="img-circle img-responsive img-center" src="http://placehold.it/300x300" ng-src="{{femaleImage}}" alt="">
 
@@ -154,7 +159,7 @@
             <input type="text" class="form-control" placeholder="Image URL" ng-model="femaleImage"></input>
           </div>
 
-          <button type="submit" class="btn btn-default">Add</button>
+          <button type="submit" class="btn btn-success">Add</button>
         </form>
       </div>
   </div>
@@ -165,11 +170,11 @@
 
 <!-- male insert photo function -->
   <div class="col-lg-3">
-      <img class="img-circle img-responsive img-center" src="http://i2.mirror.co.uk/incoming/article5423743.ece/ALTERNATES/s615b/MOST-BEAUTIFUL-FACES.jpg" alt="">
+      <img class="img-circle img-responsive img-center img-client" src="http://i2.mirror.co.uk/incoming/article5423743.ece/ALTERNATES/s615b/MOST-BEAUTIFUL-FACES.jpg" alt="">
       <h3><i class="fa fa-mars pic-icon" aria-hidden="true"></i></h3>
       <p class="img-text">Add your male photo here</p>
 
-      <div class="client-input">
+      <div class="client-input" style="margin-top:30px">
 
         <img class="img-circle img-responsive img-center" src="http://placehold.it/300x300" ng-src="{{maleImage}}" alt="">
 
@@ -183,7 +188,7 @@
             <input type="text" class="form-control" placeholder="Image URL" ng-model="maleImage"></input>
           </div>
 
-          <button type="submit" class="btn btn-default">Add</button>
+          <button type="submit" class="btn btn-success">Add</button>
         </form>
       </div>
   </div>
@@ -200,7 +205,7 @@
 <div class="row">
   <div class="col-sm-12 text-center">
       <p>
-        <a class="btn btn-default btn-lg" href="#" ng-click="seeResults()">See Results &raquo;</a>
+        <a class="btn btn-success btn-lg" href="#" ng-click="seeResults()">Who's Your Daddy ? &raquo;</a>
       </p>
   </div>
 </div>
@@ -320,11 +325,23 @@
 
   $('.img-center').on('click', function () {
 
-  $(".client-input").toggle("fast"); 
+    $(".child-input").toggle("fast"); 
+  });
+
+
+  $('.child-add').on('click', function () {
+
+    $(".client-input").toggle("fast"); 
   });
 
 
   $(document).ready(function (){
+
+    $(".img-client").click(function() {
+      $('html, body').animate({
+        scrollTop: $(".img-text").offset().top
+      }, 500);
+    });
 
     $(".examples").click(function (){
         $('html, body').animate({
@@ -338,7 +355,7 @@
         }, 1000);
     });
 
-  $(".navbar-brand").click(function (){
+    $(".navbar-brand").click(function (){
       $('html, body').animate({
         scrollTop: $("#page-top").offset().top
       }, 1000);
