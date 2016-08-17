@@ -72,7 +72,7 @@ h3 {
   margin-top: 120px;
 }
 
-.client-input {
+.client-input, .child-input {
   display: none;
 }
 
@@ -87,6 +87,10 @@ h5 {
 
 .form-group {
   margin-top: 20px;
+}
+
+form {
+  text-align: center;
 }
 
 
