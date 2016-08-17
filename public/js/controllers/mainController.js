@@ -1,53 +1,39 @@
 app.controller("MainCtrl",['$scope', 'imageServices', function($scope, imageServices){
 
 
-//connect child image from services to vie
-
+//connect child image from services to view
 
   $scope.addChildImage = function() {
     var newChildDetails = {
       image: $scope.childImage,
       subject_id: $scope.childName,
-      gallery_name: $scope.childName + new Date(),
+      gallery_name: $scope.childName + 1
     }
-    imageServices.addChildImage(newChildDetails)
+
+    imageServices.addChildImage(newChildDetails);
   }
 
-  $scope.addFemaleImage = function(){
+// female image function
+  $scope.addFemaleImage = function() {
+
     var newMomImage = {
-      image: $scope.femaleImage
+      image: $scope.femaleImage,
+      subject_id: $scope.childName,
+      gallery_name: $scope.childName + 1
     }
-    imageServices.addFemaleImage(newMomImage);
-  }
-
-
-  // we get the beers from the array only after the getAll func returns the data from the server
-  // serviceCtrl.allBeers.getAll().then(function(){
-
-  //   $scope.allBeers = serviceCtrl.allBeers.beers;
-  //   console.log('from the controller', $scope.allBeers);
-
-  // // });
-  // $scope.imageServices = mainServices.imageServices.maleImages;
-
-  // $scope.addMaleImage = function() {
-
-  //   var newMaleImage = {
-  //     maleName: $scope.maleName,
-  //     maleImage: $scope.maleImage,
-  //   };
-
-  //   mainServices.addMaleImage(newMaleImage);
-  // };
-
-  //   serviceCtrl.addBeer.create(newBeer)
     
-  // };
+    imageServices.addFemaleImage(newMomImage);
+  };
 
+//male image function
+  $scope.addMaleImage = function() {
 
-  // $scope.removeBeer = function(beer){
+    var newDadImage = {
+      image: $scope.maleImage,
+      subject_id: $scope.childName,
+      gallery_name: $scope.childName + 1
+    }
 
-  //   serviceCtrl.removeBeer.delete(beer);
-  // };
-
+    imageServices.addMaleImage(newDadImage);
+  };
 }]);
