@@ -1,5 +1,6 @@
 app.service('imageServices', ['$http', function ($http) {
 
+
 //according to api docs need to do one-time authentication
   
 
@@ -43,7 +44,6 @@ verifyService.addChildImage = function(newChildDetails) {
   }*/
 
 
-
   // beerService.getAll = function () {
 
   //   return $http.get('/beers').success(function (data) {
@@ -76,11 +76,9 @@ verifyService.addChildImage = function(newChildDetails) {
 
   // };
 
-  // return {
+/*  return {
 
-  //   allBeers: beerService,
-  //   addBeer: beerService,
-  //   removeBeer: beerService
-  // };
+    
+  };*/
 
 }]);
