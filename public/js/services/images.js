@@ -1,4 +1,4 @@
-app.service('serviceCtrl', ['$http', function ($http) {
+app.service('MainServices', ['$http', function ($http) {
 
   // var beerService = {
 

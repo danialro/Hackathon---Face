@@ -1,1 +1,1 @@
-var app = angular.module('FaceIt', []);
+var app = angular.module('FaceIt', ['ui.router']);

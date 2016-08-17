@@ -5,6 +5,7 @@
   <title>Hackathon - FaceIt</title>
 
   <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
+  <link href="https://fonts.googleapis.com/css?family=Gochi+Hand|Yellowtail" rel="stylesheet">
 
   <script src="angular/angular.min.js"></script>
   <script src="angular-ui-router/release/angular-ui-router.min.js"></script>
@@ -16,7 +17,7 @@
   <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 
-<body ng-app="FaceIt">
+<body ng-app="FaceIt" ng-controller="MainCtrl" id="page-top">
 
     <!-- Navigation -->
   <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
@@ -29,16 +30,22 @@
                   <span class="icon-bar"></span>
                   <span class="icon-bar"></span>
               </button>
-              <a class="navbar-brand" href="#">faceIt</a>
+              <a class="navbar-brand" href="#page-top" id="faceIt">faceIt</a>
           </div>
           <!-- Collect the nav links, forms, and other content for toggling -->
           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
               <ul class="nav navbar-nav">
-                  <li>
-                      <a href="#">About</a>
+<!--                   <li>
+                      <a href="#page-top"></a>
+                  </li> -->
+                  <li class="about">
+                      <a href="#about">About</a>
                   </li>
-                  <li>
-                      <a href="#">Services</a>
+                  <li class="about">
+                      <a href="#compare">Compare</a>
+                  </li>
+                  <li class="examples">
+                      <a href="#examples">Examples</a>
                   </li>
               </ul>
           </div>
@@ -48,12 +55,16 @@
   </nav>
 
   <!-- Image Background Page Header -->
-  <!-- Note: The background image is set within the business-casual.css file. -->
   <header class="business-header">
       <div class="container">
           <div class="row">
               <div class="col-lg-12">
                   <h1 class="tagline">faceIt</h1>
+              </div>
+          </div>
+          <div class="row">
+              <div class="col-lg-12">
+                  <h1 class="tagline moto">Who's Your Daddy ?</h1>
               </div>
           </div>
       </div>
@@ -65,40 +76,80 @@
 
     <hr>
 
-    <div class="row">
-        <div class="col-sm-8">
+    <div class="row" id="about">
+
+        <div class="col-lg-6">
             <h2>What We Do</h2>
             <p>Introduce the visitor to the business using clear, informative text. Use well-targeted keywords within your sentences to make sure search engines can find the business.</p>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et molestiae similique eligendi reiciendis sunt distinctio odit? Quia, neque, ipsa, adipisci quisquam ullam deserunt accusantium illo iste exercitationem nemo voluptates asperiores.</p>
-            <p>
-                <a class="btn btn-default btn-lg" href="#">Face Compare &raquo;</a>
-            </p>
         </div>
-        <div class="col-sm-4">
-            <h2>Contact Us</h2>
-            <address>
-                <strong>faceIt</strong>
-                <br>35 Ehad Ha'am
-                <br>Tel Aviv, IL
-                <br>
-            </address>
-            <address>
-                <abbr title="Phone">P:</abbr>(123) 456-7890
-                <br>
-                <abbr title="Email">E:</abbr> <a href="mailto:#">name@example.com</a>
-            </address>
-        </div>
-    </div>
-    <!-- /.row -->
 
+      
+      <div class="col-lg-6">
+        <h2>Compare</h2>
+          <ol>
+            <li>Click the child's photo to begin</li>
+            <li>First upload your child's photo</li>
+            <li>Upload your own photo</li>
+            <li>Upload your partner's photo</li>
+            <li>Program will run its compare functions (might take a few seconds)</li>
+            <li>Hit See Results!</li>
+          </ol>
+      </div>
+
+  </div>
+    <!-- /.row -->
 <hr>
 
-  <div class="row">
+<div class="row">
 
   <div class="col-lg-3 col-half-offset">
-      <img class="img-circle img-responsive img-center" src="http://placehold.it/300x300" alt="">
+      <img class="img-circle img-responsive img-center" src="https://edc2.healthtap.com/ht-staging/user_answer/avatars/1907024/large/open-uri20140724-8950-197wdqe.jpeg?1406165186" alt="">
+      <h3><i class="fa fa-child pic-icon" aria-hidden="true"></i></h3>
+      <p class="img-text">Add your child's photo here</p>
+
+      <div class="client-input">
+        <form ng-submit="addImage()">
+          
+          <div class="form-group">
+            <input type="text" class="form-control" placeholder="Name" ng-model="childName"></input>
+          </div>
+
+          <div class="form-group">
+            <input type="text" class="form-control" placeholder="Image URL" ng-model="childImage"></input>
+          </div>
+
+          <button type="submit" class="btn btn-default">Add</button>
+        </form>
+      </div>
+
+  </div>
+  
+  <div class="col-lg-1 text-center">
+      <i class="fa fa-minus equal" aria-hidden="true"></i>
+      <i class="fa fa-minus equal" aria-hidden="true"></i>
+  </div>
+
+  <div class="col-lg-3">
+
+      <img class="img-circle img-responsive img-center" src="http://ladeessa.com/wp-content/uploads/2015/08/bigstock-Beautiful-face-of-young-woman-616721091.png" alt="">
       <h3><i class="fa fa-venus pic-icon" aria-hidden="true"></i></h3>
       <p class="img-text">Add your female photo here</p>
+
+      <div class="client-input">
+        <form ng-submit="addImage()">
+          
+          <div class="form-group">
+            <input type="text" class="form-control" placeholder="Name" ng-model="femaleName"></input>
+          </div>
+
+          <div class="form-group">
+            <input type="text" class="form-control" placeholder="Image URL" ng-model="femaleImage"></input>
+          </div>
+
+          <button type="submit" class="btn btn-default">Add</button>
+        </form>
+      </div>
   </div>
 
   <div class="col-lg-1 text-center">
@@ -106,39 +157,138 @@
   </div>
 
   <div class="col-lg-3">
-      <img class="img-circle img-responsive img-center" src="http://placehold.it/300x300" alt="">
+      <img class="img-circle img-responsive img-center" src="http://i2.mirror.co.uk/incoming/article5423743.ece/ALTERNATES/s615b/MOST-BEAUTIFUL-FACES.jpg" alt="">
       <h3><i class="fa fa-mars pic-icon" aria-hidden="true"></i></h3>
       <p class="img-text">Add your male photo here</p>
+
+      <div class="client-input">
+        <form ng-submit="addImage()">
+          
+          <div class="form-group">
+            <input type="text" class="form-control" placeholder="Name" ng-model="maleName"></input>
+          </div>
+
+          <div class="form-group">
+            <input type="text" class="form-control" placeholder="Image URL" ng-model="maleImage"></input>
+          </div>
+
+          <button type="submit" class="btn btn-default">Add</button>
+        </form>
+      </div>
   </div>
 
+</div>
+<!-- /.row -->
+<br>
+
+<!-- compare invoke function -->
+<div class="row">
+  <div class="col-sm-12 text-center">
+      <p>
+        <a class="btn btn-default btn-lg" href="#" ng-click="seeResults()">See Results &raquo;</a>
+      </p>
+  </div>
+</div>
+
+<hr>
+
+<!-- example results -->
+<div class="row" id="examples">
+  <div class="col-sm-12">
+    <h2>Examples</h2>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-lg-3 col-half-offset">
+      <img class="img-circle img-responsive img-center" src="https://edc2.healthtap.com/ht-staging/user_answer/avatars/1907024/large/open-uri20140724-8950-197wdqe.jpeg?1406165186" alt="">
+  </div>
+  
   <div class="col-lg-1 text-center">
       <i class="fa fa-minus equal" aria-hidden="true"></i>
       <i class="fa fa-minus equal" aria-hidden="true"></i>
   </div>
 
   <div class="col-lg-3">
-      <img class="img-circle img-responsive img-center" src="http://placehold.it/300x300" alt="">
-      <h3><i class="fa fa-child pic-icon" aria-hidden="true"></i></h3>
-      <p class="img-text">Add your child's photo here</p>
+      <img class="img-circle img-responsive img-center" src="http://ladeessa.com/wp-content/uploads/2015/08/bigstock-Beautiful-face-of-young-woman-616721091.png" alt="">
+  </div>
+
+  <div class="col-lg-1 text-center">
+      <i class="fa fa-plus plus" aria-hidden="true"></i>
+  </div>
+
+  <div class="col-lg-3">
+      <img class="img-circle img-responsive img-center" src="http://i2.mirror.co.uk/incoming/article5423743.ece/ALTERNATES/s615b/MOST-BEAUTIFUL-FACES.jpg" alt="">
+  </div>
+
+</div>
+
+<br>
+
+<div class="row">
+  <div class="col-sm-12 text-center">
+      <p>
+        <a class="btn btn-default btn-lg" href="#">Compare Results: Child looks more like mom (76%)</a>
+      </p>
   </div>
 </div>
-<!-- /.row -->
 
 <hr>
 
   <!-- Footer -->
   <footer>
-      <div class="row">
-          <div class="col-lg-12">
-              <p>Copyright &copy; Your Website 2014</p>
-          </div>
+    <div class="row">
+      <div class="col-lg-4 text-center">
+        <h5>Copyright &copy; Your Website 2016</h5>
       </div>
+      <div class="col-lg-4 text-center">
+        <h2>Contact Us</h2>
+      </div>
+      <div class="col-lg-4 text-center">
+        <strong>faceIt</strong>
+        <br>35 Ehad Ha'am, Tel Aviv, IL
+        <br>
+        <abbr title="Phone">P:</abbr> (123) 456-7890
+        <br>
+        <abbr title="Email">E:</abbr> <a href="mailto:#"> name@example.com</a>
+      </div>
+    </div>
       <!-- /.row -->
   </footer>
 
 </div>
 <!-- /.container -->
 
+<script type="text/javascript">
+
+  $('.img-center').on('click', function () {
+
+  $(".client-input").toggle("fast"); 
+  });
+
+
+  $(document).ready(function (){
+
+    $(".examples").click(function (){
+        $('html, body').animate({
+          scrollTop: $("#examples").offset().top
+        }, 2000);
+    });
+
+    $(".about").click(function (){
+        $('html, body').animate({
+          scrollTop: $("#about").offset().top
+        }, 2000);
+    });
+
+  $("#faceIt").click(function (){
+      $('html, body').animate({
+        scrollTop: $("#faceIt").offset().top
+      }, 2000);
+    });
+  });
+
+</script>
 
 
 
