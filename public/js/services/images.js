@@ -1,15 +1,49 @@
 app.service('imageServices', ['$http', function ($http) {
 
-  var imageServices = {
 
-    maleImages: [],
+//according to api docs need to do one-time authentication
+  
 
+  var verifyService = {
+
+    childDetails: [],
+    momDetails:[],
+    dadDetails:[]
   };
 
-  var addMaleImage = function(newMaleImage) {
+  var parentsSubject_id ; 
+  var parentsGallery_name ;
 
-    imageServices.maleImages.push(newMaleImage);
-  };
+
+//add child to gallery function
+
+verifyService.addChildImage = function(newChildDetails) {
+  //now we add to the gallery through the api, first authentication
+  var child = new Kairos("13c988b5", "e5a67cf16b08e3b32f3e26b7437ff8ec");
+
+  child.enroll(newChildDetails)
+  .then(function(response) {
+    console.log(response);
+//insert data into childDetails array and save Subject id and Gallery id to use later for mom and dad
+    angular.copy(response, verifyService.childDetails); 
+     parentsSubject_id = response.images[0].subject_id;
+     parentsGallery_name = response.images[0].gallery_name;
+  })
+  // err -> array: jsonschema validate errors 
+  //        or throw Error 
+  .catch(function(err) {error});
+
+}
+//add mom function and compare to child
+
+/*  verifyService.addFemaleImage = function(newMomImage, parentsSubject_id, parentsGallery_name){
+
+    var mom = new Kairos("13c988b5", "e5a67cf16b08e3b32f3e26b7437ff8ec");
+
+
+  }*/
+
+
   // beerService.getAll = function () {
 
   //   return $http.get('/beers').success(function (data) {
@@ -42,11 +76,9 @@ app.service('imageServices', ['$http', function ($http) {
 
   // };
 
-  return {
+/*  return {
 
-    imageServices: imageServices,
-    addMaleImage: addMaleImage
-
-  };
+    
+  };*/
 
 }]);

@@ -107,8 +107,11 @@
 
       <div class="client-input">
 
+
+
         <img class="img-circle img-responsive img-center" src="http://placehold.it/300x300" ng-src="{{childImage}}" alt="">
         
+
         <form ng-submit="addChildImage()">
           
           <div class="form-group">
@@ -189,6 +192,9 @@
 <!-- /.row -->
 <!-- end of compare function -->
 <br>
+<!-- create container to include the uploaded images (child, mom, father) -->
+<div class="container">
+        <div class="row">
 
 <!-- invoke compare function and see results -->
 <div class="row">
@@ -343,6 +349,7 @@
 
 
   <script src="js/app.js"></script>
+  <script src="kairos.js"></script>
   <script src="js/services/images.js"></script>
   <script src="js/controllers/mainController.js"></script>
 
