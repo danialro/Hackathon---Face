@@ -31,7 +31,7 @@ app.get('/', function(req, res){
 
 // // Here would be a post image to server as a new img object
 // console.log('yo from ther server')
-// app.post('', function (req, res, next) {
+// app.post('/beers', function (req, res, next) {
   
 //   var "beer = new Beer"(req.body);
 
