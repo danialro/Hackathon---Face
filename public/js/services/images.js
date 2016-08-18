@@ -9,9 +9,6 @@ var dadConfidence = 0;
 
   var verifyService = {
 
-    // childDetails: [],
-    // momDetails:[],
-    // dadDetails:[],
     compareResults: [],
     percentResult: []
 
@@ -23,13 +20,13 @@ verifyService.compare =  function() {
   console.log(dadConfidence);
     if (momConfidence > dadConfidence) {
 
-      var momWins = "Mom";
+      var momWins = 1;
       verifyService.compareResults.push(momWins);
       verifyService.percentResult.push(momConfidence);
 
     } else {
 
-      var dadWins = "Dad";
+      var dadWins = 2;
       verifyService.compareResults.push(dadWins);
       verifyService.percentResult.push(dadConfidence);
     }

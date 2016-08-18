@@ -52,9 +52,11 @@ app.controller("MainCtrl",['$scope', 'imageServices', function($scope, imageServ
     var winner = imageServices.getWinner();
     var percent = imageServices.getResults();
 
-    if (winner === "Mom") {
+    if (winner == 1) {
 
       winner = $scope.femaleName;
+      console.log("mom", winner);
+
     } else {
 
       winner = $scope.maleName;
