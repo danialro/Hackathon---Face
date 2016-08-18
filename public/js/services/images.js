@@ -12,7 +12,8 @@ var dadConfidence = 0;
     // childDetails: [],
     // momDetails:[],
     // dadDetails:[],
-    compareResults: []
+    compareResults: [],
+    percentResult: []
 
   };
 
@@ -24,11 +25,13 @@ verifyService.compare =  function() {
 
       var momWins = "Mom";
       verifyService.compareResults.push(momWins);
+      verifyService.percentResult.push(momConfidence);
 
     } else {
 
       var dadWins = "Dad";
       verifyService.compareResults.push(dadWins);
+      verifyService.percentResult.push(dadConfidence);
     }
 }
 
@@ -119,6 +122,13 @@ verifyService.addFemaleImage = function(newMomImage) {
   verifyService.getWinner = function() {
 
     return verifyService.compareResults;
+  }
+
+  
+
+  verifyService.getResults = function() {
+
+    return verifyService.percentResult;
   }
  
   return verifyService; 
