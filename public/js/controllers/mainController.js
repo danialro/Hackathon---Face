@@ -48,8 +48,9 @@ app.controller("MainCtrl",['$scope', 'imageServices', function($scope, imageServ
 
     imageServices.compare();
 
-    var winner = imageServices.getWinner();
     var child = $scope.childName;
+    var winner = imageServices.getWinner();
+    var percent = imageServices.getResults();
 
     if (winner === "Mom") {
 
@@ -59,7 +60,7 @@ app.controller("MainCtrl",['$scope', 'imageServices', function($scope, imageServ
       winner = $scope.maleName;
     }
 
-      swal('Congratulations!', child + " looks more like " + winner +"!");
+      swal('Congratulations!', child + " looks more like " + winner +"! " + Math.floor(percent * 100) +"%");
   }
 
 }]);
