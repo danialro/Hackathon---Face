@@ -37,7 +37,10 @@ app.controller("MainCtrl",['$scope', 'imageServices', function($scope, imageServ
     }
 
     imageServices.addMaleImage(newDadImage);
-    
+    swal({
+      title: "Click on Who's Your Daddy for results!" ,
+      timer: 3000
+    })
   };
 
 //compare and show results function
@@ -46,8 +49,18 @@ app.controller("MainCtrl",['$scope', 'imageServices', function($scope, imageServ
     imageServices.compare();
 
     var winner = imageServices.getWinner();
-      swal('Congratulations!', winner + " " + 'is the winner!');
+    var child = $scope.childName;
+
+    if (winner === "Mom") {
+
+      winner = $scope.femaleName;
+    } else {
+
+      winner = $scope.maleName;
     }
+
+      swal('Congratulations!', child + " looks more like " + winner +"!");
+  }
 
 }]);
 

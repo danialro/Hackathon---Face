@@ -24,6 +24,8 @@
 
 <body ng-app="FaceIt" ng-controller="MainCtrl" id="page-top">
 
+
+
     <!-- Navigation -->
   <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
       <div class="container">
@@ -52,6 +54,9 @@
       </div>
       <!-- /.container -->
   </nav>
+
+
+
 
   <!-- Image Background Page Header -->
   <header class="business-header">
@@ -111,6 +116,8 @@
 <br>
 <br>
 <br>
+
+<!-- first picture row -->
 <!-- child insert photo function -->
   <div class="col-lg-3 col-half-offset here">
       <img class="img-circle img-responsive img-center img-client" src="https://edc2.healthtap.com/ht-staging/user_answer/avatars/1907024/large/open-uri20140724-8950-197wdqe.jpeg?1406165186" alt="">
@@ -201,9 +208,7 @@
 <!-- /.row -->
 <!-- end of compare function -->
 <br>
-<!-- create container to include the uploaded images (child, mom, father) -->
-<div class="container">
-        <div class="row">
+
 
 <!-- invoke compare function and see results -->
 <div class="row">
@@ -236,7 +241,7 @@
   </div>
 
   <div class="col-lg-3">
-      <img class="img-circle img-responsive img-center" src="/ethiopia.jpg" alt="">
+      <img class="img-circle img-responsive img-center" src="http://www.soyimakeup.com/wp-content/uploads/2015/07/Screen-Shot-2015-07-06-at-12.29.36-PM.png" alt="">
   </div>
 
   <div class="col-lg-1 text-center">
@@ -254,7 +259,7 @@
 <div class="row">
   <div class="col-sm-12 text-center">
       <p>
-        <a class="btn btn-success btn-lg" href="#">Compare Results: Child looks more like dad</a>
+        <a class="btn btn-success btn-lg" href="#">Compare Results: Child looks more like Dad</a>
       </p>
   </div>
 </div>
@@ -274,7 +279,7 @@
   </div>
 
   <div class="col-lg-3">
-      <img class="img-circle img-responsive img-center" src="http://www.soyimakeup.com/wp-content/uploads/2015/07/Screen-Shot-2015-07-06-at-12.29.36-PM.png" alt="">
+      <img class="img-circle img-responsive img-center" src="/ethiopia.jpg" alt="">
   </div>
 
   <div class="col-lg-1 text-center">
@@ -292,7 +297,7 @@
 <div class="row">
   <div class="col-sm-12 text-center">
       <p>
-        <a class="btn btn-success btn-lg" href="#">Compare Results: Child looks more like mom</a>
+        <a class="btn btn-success btn-lg" href="#">Compare Results: Child looks more like Mom</a>
       </p>
   </div>
 </div>
@@ -321,7 +326,6 @@
       <!-- /.row -->
   </footer>
 
-</div>
 <!-- /.container -->
 
 <!-- jquery functions -->
@@ -337,6 +341,7 @@ $('.child-add').on('click', function () {
 
     $(".client-input").toggle("fast"); 
   });
+
 
 $(document).ready(function (){
 
